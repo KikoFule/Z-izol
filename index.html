@@ -794,6 +794,15 @@ hr.sep { border: none; border-top: 1px solid var(--border); }
   font-size: 14px; font-weight: 600; margin-top: 12px;
   animation: thanksPop 0.4s var(--ease);
 }
+.form-error {
+  display: none; color: #c0392b;
+  font-size: 14px; font-weight: 600; margin-top: 12px;
+  animation: thanksPop 0.4s var(--ease);
+}
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 @keyframes thanksPop {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
@@ -1409,7 +1418,7 @@ footer a:hover { color: var(--accent2); }
       <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
     </div>
     <h3 id="contactModalTitle" data-i18n="modal.title">Kontaktujte nás</h3>
-    <p class="contact-modal-sub" data-i18n="modal.subtitle">Sme vám k dispozícii v troch krajinách</p>
+    <p class="contact-modal-sub" data-i18n="modal.subtitle">Sme vám k dispozícii v dvoch krajinách</p>
     <div class="contact-modal-list">
       <a class="contact-modal-item" href="tel:+421911232870">
         <span class="contact-modal-item-icon">
@@ -1418,15 +1427,6 @@ footer a:hover { color: var(--accent2); }
         <span class="contact-modal-item-text">
           <span class="contact-modal-item-label" data-i18n="modal.slovakia">Slovensko</span>
           <span class="contact-modal-item-value">+421 911 232 870</span>
-        </span>
-      </a>
-      <a class="contact-modal-item" href="tel:+4915151112122">
-        <span class="contact-modal-item-icon">
-          <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
-        </span>
-        <span class="contact-modal-item-text">
-          <span class="contact-modal-item-label" data-i18n="modal.germany">Nemecko</span>
-          <span class="contact-modal-item-value">+49 1515 1112 122</span>
         </span>
       </a>
       <a class="contact-modal-item" href="tel:+41767600722">
@@ -1438,13 +1438,13 @@ footer a:hover { color: var(--accent2); }
           <span class="contact-modal-item-value">+41 767 600 722</span>
         </span>
       </a>
-      <a class="contact-modal-item" href="mailto:info@z-izol.sk">
+      <a class="contact-modal-item" href="mailto:info@z-izol.com">
         <span class="contact-modal-item-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </span>
         <span class="contact-modal-item-text">
           <span class="contact-modal-item-label" data-i18n="modal.email">E-mail</span>
-          <span class="contact-modal-item-value">info@z-izol.sk</span>
+          <span class="contact-modal-item-value">info@z-izol.com</span>
         </span>
       </a>
     </div>
@@ -1479,12 +1479,19 @@ footer a:hover { color: var(--accent2); }
 
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="sk" onclick="setLang('sk')" title="Slovensky" aria-label="Slovensky">
-      <svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg">
-        <rect width="9" height="2" fill="#fff"/>
-        <rect y="2" width="9" height="2" fill="#0b4ea2"/>
-        <rect y="4" width="9" height="2" fill="#ee1c25"/>
-        <path d="M1.2 1.2 h2.4 v2.6 c0 0.8 -0.6 1.2 -1.2 1.4 c-0.6 -0.2 -1.2 -0.6 -1.2 -1.4 z" fill="#ee1c25" stroke="#fff" stroke-width="0.12"/>
-        <path d="M2 2.4 h0.4 v0.4 h0.4 v-0.4 h0.4 v0.4 h-0.4 v0.4 h0.4 v0.4 h-0.4 v0.4 h-0.4 v-0.4 h-0.4 v-0.4 h0.4 v-0.4 h-0.4z" fill="#fff"/>
+      <svg viewBox="0 0 90 60" xmlns="http://www.w3.org/2000/svg">
+        <!-- pruhy -->
+        <rect width="90" height="20" fill="#fff"/>
+        <rect y="20" width="90" height="20" fill="#0b4ea2"/>
+        <rect y="40" width="90" height="20" fill="#ee1c25"/>
+        <!-- štít -->
+        <path d="M 14 14 L 38 14 L 38 36 C 38 44 32 48 26 50 C 20 48 14 44 14 36 Z" fill="#ee1c25" stroke="#fff" stroke-width="1.4"/>
+        <!-- dvojkríž biely -->
+        <rect x="24.5" y="20" width="3" height="22" fill="#fff"/>
+        <rect x="19" y="24" width="14" height="2.6" fill="#fff"/>
+        <rect x="17" y="30" width="18" height="2.6" fill="#fff"/>
+        <!-- trojvršie modré -->
+        <path d="M 17 45 Q 21 41 26 44 Q 31 41 35 45 L 35 47 L 17 47 Z" fill="#0b4ea2"/>
       </svg>
     </button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')" title="English" aria-label="English">
@@ -1583,7 +1590,7 @@ footer a:hover { color: var(--accent2); }
         <div class="stat-label" data-i18n="stats.projects">Dokončených projektov</div>
       </div>
       <div class="stat-item reveal delay-2">
-        <div class="stat-num"><span class="count" data-target="3">0</span></div>
+        <div class="stat-num"><span class="count" data-target="2">0</span></div>
         <div class="stat-label" data-i18n="stats.countries">Krajiny pôsobenia</div>
       </div>
       <div class="stat-item reveal delay-3">
@@ -1650,25 +1657,26 @@ footer a:hover { color: var(--accent2); }
       <div class="contact-cols">
         <div class="contact-info-col reveal-left">
           <div class="phone-email">
-            <a href="mailto:info@z-izol.sk">info@z-izol.sk</a>
+            <a href="mailto:info@z-izol.com">info@z-izol.com</a>
             <a href="tel:+421911232870">+421 911 232 870</a>
-            <a href="tel:+4915151112122">+49 1515 1112 122</a>
             <a href="tel:+41767600722">+41 767 600 722</a>
           </div>
         </div>
         <div class="reveal-right">
-          <div class="contact-form-grid">
-            <input type="text" data-i18n-placeholder="form.name" placeholder="Meno">
-            <input type="text" data-i18n-placeholder="form.company" placeholder="Spoločnosť">
-            <input type="email" data-i18n-placeholder="form.email" placeholder="E-mail">
-            <input type="tel" data-i18n-placeholder="form.phone" placeholder="Tel. číslo">
-            <input type="text" data-i18n-placeholder="form.subject" placeholder="Predmet" class="full">
-            <textarea data-i18n-placeholder="form.message" placeholder="Vaša správa..." class="full"></textarea>
+          <form class="contact-form-grid" id="form-home" onsubmit="return submitForm(event,'home')" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="meno" data-i18n-placeholder="form.name" placeholder="Meno" required>
+            <input type="text" name="spolocnost" data-i18n-placeholder="form.company" placeholder="Spoločnosť">
+            <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="E-mail" required>
+            <input type="tel" name="telefon" data-i18n-placeholder="form.phone" placeholder="Tel. číslo">
+            <input type="text" name="predmet" data-i18n-placeholder="form.subject" placeholder="Predmet" class="full">
+            <textarea name="sprava" data-i18n-placeholder="form.message" placeholder="Vaša správa..." class="full" required></textarea>
+            <input type="hidden" name="_subject" value="Nová správa z webu z-izol.com">
             <div class="full">
-              <button class="submit-btn" onclick="submitForm('home')"><span data-i18n="form.send">ODOSLAŤ</span></button>
+              <button type="submit" class="submit-btn"><span data-i18n="form.send">ODOSLAŤ</span></button>
               <div class="form-thanks" id="thanks-home" data-i18n="form.thanks">Ďakujeme za vašu správu!</div>
+              <div class="form-error" id="error-home" data-i18n="form.error">Niečo sa pokazilo. Skúste to znova alebo nás kontaktujte priamo emailom.</div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -1895,24 +1903,25 @@ footer a:hover { color: var(--accent2); }
     <p class="intro reveal" data-i18n="contact.subtitle">Kontaktujte nás teraz! Radi s vami preberieme všetky detaily.</p>
     <div class="kontakt-grid">
       <div class="kontakt-info reveal-left">
-        <a href="mailto:info@z-izol.sk">info@z-izol.sk</a>
+        <a href="mailto:info@z-izol.com">info@z-izol.com</a>
         <a href="tel:+421911232870">+421 911 232 870</a>
-        <a href="tel:+4915151112122">+49 1515 1112 122</a>
         <a href="tel:+41767600722">+41 767 600 722</a>
       </div>
       <div class="reveal-right">
-        <div class="contact-form-grid">
-          <input type="text" data-i18n-placeholder="form.name" placeholder="Meno">
-          <input type="text" data-i18n-placeholder="form.company" placeholder="Spoločnosť">
-          <input type="email" data-i18n-placeholder="form.email" placeholder="E-mail">
-          <input type="tel" data-i18n-placeholder="form.phone" placeholder="Tel. číslo">
-          <input type="text" data-i18n-placeholder="form.subject" placeholder="Predmet" class="full">
-          <textarea data-i18n-placeholder="form.message" placeholder="Vaša správa..." class="full"></textarea>
+        <form class="contact-form-grid" id="form-kontakt" onsubmit="return submitForm(event,'kontakt')" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="meno" data-i18n-placeholder="form.name" placeholder="Meno" required>
+          <input type="text" name="spolocnost" data-i18n-placeholder="form.company" placeholder="Spoločnosť">
+          <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="E-mail" required>
+          <input type="tel" name="telefon" data-i18n-placeholder="form.phone" placeholder="Tel. číslo">
+          <input type="text" name="predmet" data-i18n-placeholder="form.subject" placeholder="Predmet" class="full">
+          <textarea name="sprava" data-i18n-placeholder="form.message" placeholder="Vaša správa..." class="full" required></textarea>
+          <input type="hidden" name="_subject" value="Nová správa z webu z-izol.com">
           <div class="full">
-            <button class="submit-btn" onclick="submitForm('kontakt')"><span data-i18n="form.send">ODOSLAŤ</span></button>
+            <button type="submit" class="submit-btn"><span data-i18n="form.send">ODOSLAŤ</span></button>
             <div class="form-thanks" id="thanks-kontakt" data-i18n="form.thanks">Ďakujeme za vašu správu!</div>
+            <div class="form-error" id="error-kontakt" data-i18n="form.error">Niečo sa pokazilo. Skúste to znova alebo nás kontaktujte priamo emailom.</div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -1965,6 +1974,7 @@ const i18n = {
     'form.message': 'Vaša správa...',
     'form.send': 'ODOSLAŤ',
     'form.thanks': 'Ďakujeme za vašu správu!',
+    'form.error': 'Niečo sa pokazilo. Skúste znova alebo nám napíšte priamo na info@z-izol.com.',
 
     'cta.interest': 'Máte záujem o naše služby? Kontaktujte nás teraz!',
     'cta.quote': 'Máte záujem o cenovú ponuku pre váš projekt? Kontaktujte nás teraz!',
@@ -2003,7 +2013,7 @@ const i18n = {
     'floating.call': 'Zavolajte nám',
 
     'modal.title': 'Kontaktujte nás',
-    'modal.subtitle': 'Sme vám k dispozícii v troch krajinách',
+    'modal.subtitle': 'Sme vám k dispozícii v dvoch krajinách',
     'modal.slovakia': 'Slovensko',
     'modal.germany': 'Nemecko',
     'modal.switzerland': 'Švajčiarsko',
@@ -2053,6 +2063,7 @@ const i18n = {
     'form.message': 'Your message...',
     'form.send': 'SEND',
     'form.thanks': 'Thank you for your message!',
+    'form.error': 'Something went wrong. Try again or email us directly at info@z-izol.com.',
 
     'cta.interest': 'Interested in our services? Contact us now!',
     'cta.quote': 'Interested in a quote for your project? Contact us now!',
@@ -2091,7 +2102,7 @@ const i18n = {
     'floating.call': 'Call us',
 
     'modal.title': 'Contact us',
-    'modal.subtitle': 'We are available in three countries',
+    'modal.subtitle': 'We are available in two countries',
     'modal.slovakia': 'Slovakia',
     'modal.germany': 'Germany',
     'modal.switzerland': 'Switzerland',
@@ -2141,6 +2152,7 @@ const i18n = {
     'form.message': 'Ihre Nachricht...',
     'form.send': 'SENDEN',
     'form.thanks': 'Danke für Ihre Nachricht!',
+    'form.error': 'Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt an info@z-izol.com schreiben.',
 
     'cta.interest': 'Interesse an unseren Leistungen? Kontaktieren Sie uns jetzt!',
     'cta.quote': 'Interesse an einem Angebot für Ihr Projekt? Kontaktieren Sie uns jetzt!',
@@ -2179,7 +2191,7 @@ const i18n = {
     'floating.call': 'Rufen Sie uns an',
 
     'modal.title': 'Kontaktieren Sie uns',
-    'modal.subtitle': 'Wir sind in drei Ländern für Sie da',
+    'modal.subtitle': 'Wir sind in zwei Ländern für Sie da',
     'modal.slovakia': 'Slowakei',
     'modal.germany': 'Deutschland',
     'modal.switzerland': 'Schweiz',
@@ -2383,10 +2395,39 @@ function closeMobile(){
   document.getElementById('mobileNav').classList.remove('open');
 }
 
-/* ── FORM ── */
-function submitForm(id){
-  const el = document.getElementById('thanks-'+id);
-  if(el){ el.style.display='block'; }
+/* ── FORM (Formspree submission) ── */
+function submitForm(e, id){
+  e.preventDefault();
+  const form = document.getElementById('form-'+id);
+  if(!form) return false;
+  const btn = form.querySelector('.submit-btn');
+  const thanks = document.getElementById('thanks-'+id);
+  const errorEl = document.getElementById('error-'+id);
+  if(thanks) thanks.style.display = 'none';
+  if(errorEl) errorEl.style.display = 'none';
+  if(btn){ btn.disabled = true; }
+
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if(res.ok){
+      if(thanks) thanks.style.display = 'block';
+      form.reset();
+    } else {
+      if(errorEl) errorEl.style.display = 'block';
+    }
+  })
+  .catch(() => {
+    if(errorEl) errorEl.style.display = 'block';
+  })
+  .finally(() => {
+    if(btn) btn.disabled = false;
+  });
+  return false;
 }
 
 /* ── LIGHTBOX (s navigáciou ←/→) ── */
